@@ -1,4 +1,3 @@
-import Container from "@/components/container";
 import InLineLink from "@/components/inLineLink"
 import Image from "next/image"
 import Arf from "@/public/about/me/Arf.jpeg"

@@ -1,4 +1,3 @@
-import StickerContainer from "@/components/stickers/stickerContainer";
 
 export default function AboutLayout({
   children,
@@ -6,10 +5,8 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <StickerContainer>
-        <div className="flex min-h-[85vh] flex-col items-center justify-center gap-5">
-                {children}	
-        </div>
-    </StickerContainer>
+    <div className="flex min-h-[85vh] flex-col items-center justify-center gap-5">
+      {children}	
+    </div>
   );
 }
