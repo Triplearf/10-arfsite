@@ -9,7 +9,7 @@ interface Page {
 }
 
 const pagesList = [
-	{name: "Me", href: "/about/me"},
+	{name: "Me", href: "/about"},
 	{name: "Hobbies", href: "/about/hobbies"},
 	{name: "Education", href: "/about/education"},
 	{name: "Contact", href: "/about/contact"}

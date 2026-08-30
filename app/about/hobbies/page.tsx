@@ -11,12 +11,13 @@ const factorio = [
 export default function Hobbies() {
 	return (
 		<div className={styles.aboutWrapper}>
-			<h1>My <span className="text-primary1">Hobbies</span></h1>
+			<h1><span className="text-primary1">Things</span> I Like Doing</h1>
 			<div className="flex gap-4">
 				{/* Video Games */}
 				<div>
 					<h2>Fav Game</h2>
 						<h3>Factorio</h3>
+							<div className="w-[50vw]">
 						<ImagesCarousel>
 							{factorio.map((link, index) => {
 								return (
@@ -26,6 +27,7 @@ export default function Hobbies() {
 								)
 							})}
 						</ImagesCarousel>
+						</div>
 					{/* <h2>Playing</h2>
 						<h3>Peak</h3> */}
 				</div>

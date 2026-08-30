@@ -1,14 +1,53 @@
-import Image from 'next/image';
-import Container from "@/components/container";
-import InLineLink from "@/components/inLineLink"
+import React from 'react';
+import Image from 'next/image'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 export default function Education() {
-	return (
-		<div>
-			<h1 className="text-5xl font-bold">My <span className="text-primary1">Education</span></h1>
-			<p>
+  return (
+    <div className="flex flex-col h-[45vh] max-w-[50vw]">
+      <h1>What I've <span className="text-primary1">Done</span></h1>
+      <div className="flex-1 min-h-0 overflow-y-auto">
+        <Period start="2025" event="Bachelor of Science: Computer Science" location="UP Diliman"></Period>
+				<Period start="2019" end="2025" event="High School" location="Agusan del Sur National High School" icon="/education/asnhs.png"></Period>
+      </div>
+    </div>
+  )
+}
 
-			</p>
-		</div>
-	)
+interface PeriodProps {
+	start: string,
+	end?: string,
+	event: string,
+	location?: string,
+	icon?: string | StaticImport,
+	children?: React.ReactNode,
+}
+
+function Period({ 
+  start, 
+  end = "Present", 
+  event, 
+  location, 
+  icon = "/education/University_of_The_Philippines_seal.svg", 
+  children 
+}: PeriodProps) {
+  return (
+    <div className="mb-5">
+      <p className="text-xl font-bold">• {start} - {end}</p>
+      <div className="ml-3 flex items-center gap-3 my-2">
+        <Image 
+          src={icon} 
+          alt={event} 
+          width={60} 
+          height={60} 
+          className="object-contain"
+        />
+        <div>
+          <h3 className="text-sm font-bold">{event}</h3>
+          <p className="text-xs">{location}</p>
+        </div>
+      </div>
+      {children}
+    </div>
+  );
 }
