@@ -8,7 +8,7 @@ export default function NavBar() {
 
   const navItems = [
     { name: 'Home', href: '/', color: 'primary1' },
-    { name: 'About', href: '/about/me', color: 'primary1' },
+    { name: 'About', href: '/about', color: 'primary1' },
     { name: 'Projects', href: '/projects', color: 'primary2' },
     { name: 'Blog', href: '/blog', color: 'primary3' },
     { name: 'Fidget', href: '/fidget', color: 'primary4' }
