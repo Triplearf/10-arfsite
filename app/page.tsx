@@ -1,9 +1,4 @@
 import Container from "@/components/container";
-import LineBar from "@/components/linebar";
-import InLineLink from "@/components/inLineLink"
-import Image from "next/image"
-
-import { AnimatePresence } from "framer-motion"
 
 export default function Home() {
   return (
