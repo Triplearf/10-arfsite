@@ -25,23 +25,23 @@ export default function LineBar( {pages = pagesList}: {pages?: Page[]} ) {
 	
 	return (
 		<div 
-		className="flex flex-row items-center transition">
+		className="flex flex-col justify-center items-center transition">
 			{pages.map((page, index) => {
 
 				if (index >= numPages - 1) {
 					return (
-						<Link key={page.name} className="flex flex-row items-center" href={page.href}>
+						<Link key={page.name} className="flex flex-col" href={page.href}>
 						<Dot name={page.name} isActive={page.href === currentURL}></Dot>
 						</Link>
 					)
 				}
 				else {
 					return(
-						<div key={page.name} className="flex flex-row items-center">
+						<div key={page.name} className="flex flex-col justify-center items-center">
 							<Link href={page.href}>
 								<Dot name={page.name} isActive={page.href === currentURL}></Dot>
 							</Link>
-							<HorizontalLine></HorizontalLine>
+							<VerticalLine></VerticalLine>
 						</div>
 					)
 				}
@@ -59,15 +59,13 @@ interface DotProps {
 
 function Dot({ size = 15, name = "hi", isActive}: DotProps) {
   return (
-		// Group can be called later
-		// "transition group relative flex flex-col items-center cursor-pointer hover:scale-140"
-    <div className={`transition group relative flex flex-col items-center cursor-pointer 
+    <div className={`transition group relative flex flex-row items-center cursor-pointer 
 			${isActive ? "scale-130" : "hover:scale-130"}`}>
       {/* Circle Dot */}
 			{/* Make it change color when the group is hovered on */}
       <div
         className={`rounded-full transition-colors duration-200
-					${isActive ? "bg-primary1" : "bg-[#AB9163] group-hover:bg-primary1"}`}
+					${isActive ? "bg-primary1 scale-110" : "bg-[#AB9163] group-hover:bg-primary1 group-hover:scale-110"}`}
         style={{
           width: `${size}px`,
           height: `${size}px`,
@@ -76,9 +74,9 @@ function Dot({ size = 15, name = "hi", isActive}: DotProps) {
 
       {/* Label Text */}
       
-      <p className={`absolute top-full underline-offset-2 whitespace-nowrap text-[14px] font-light transition duration-200
-				${isActive ? "text-primary1 underline " : "text-[#AB9163]"}
-				group-hover:underline group-hover:text-primary1`
+      <p className={`ml-1.5 absolute left-full underline-offset-2 whitespace-nowrap text-[20px] transition duration-200
+				${isActive ? "text-primary1 underline font-bold" : "text-[#AB9163] font-extralight"}
+				group-hover:underline group-hover:text-primary1 group-hover:font-bold`
 			}>
         {name}
       </p>
@@ -86,13 +84,13 @@ function Dot({ size = 15, name = "hi", isActive}: DotProps) {
   );
 }
 
-function HorizontalLine( { length=75, color="dead" }:{ length?: number, color?: string } ) {
+function VerticalLine( { length=50, color="dead" }:{ length?: number, color?: string } ) {
 	return (
 		<div 
-		className="-mx-1 bg-[#AB9163]"
+		className="-my-1 bg-[#AB9163]"
 		style={{
-			width: `${length}px`,
-			height: `2px`,
+			width: `2px`,
+			height: `${length}px`,
 		}}>
 
 		</div>

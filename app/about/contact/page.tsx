@@ -14,7 +14,7 @@ const ContactLinks = [
 export default function Contact() {
 	return (
 		<div>
-		<h1>Where <span className="text-primary1"> I'm @</span></h1>
+		<h1 className="text-center">✦ Where <span className="text-primary1"> I'm @</span> ✦</h1>
 		<div className="flex gap-5 items-center justify-center">
 			{
 				ContactLinks.map(([icon, url], index) => (

@@ -5,7 +5,7 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 export default function Education() {
   return (
     <div className="flex flex-col h-[45vh] max-w-[50vw] gap-3">
-      <h1>What I've <span className="text-primary1">Done</span></h1>
+      <h1 className="text-center">What I've <span className="text-primary1">Learned</span></h1>
       <div className="flex-1 min-h-0 overflow-y-auto
 			scrollbar- [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <Period start="2025" event="Bachelor of Science: Computer Science" location="UP Diliman"></Period>
@@ -21,7 +21,6 @@ interface PeriodProps {
 	event: string,
 	location?: string,
 	icon?: string | StaticImport,
-	children?: React.ReactNode,
 }
 
 function Period({ 
@@ -30,7 +29,6 @@ function Period({
   event, 
   location, 
   icon = "/education/University_of_The_Philippines_seal.svg", 
-  children 
 }: PeriodProps) {
   return (
     <div className="mb-5">

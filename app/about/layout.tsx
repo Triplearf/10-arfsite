@@ -9,15 +9,23 @@ export default function AboutLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-[85vh] flex-col items-center justify-center gap-5">
-			<PageAnimatePresence>
+    <div className="grid grid-cols-[1fr_auto_1fr] min-h-[85vh] items-center gap-3">
+      <div className="justify-self-end">
+      </div>
+
+      <div className="justify-self-center">
+      <PageAnimatePresence>
 				<Container>
 					<div className={styles.aboutWrapper}>
 						{children}	
 					</div>
 				</Container>
 			</PageAnimatePresence>
-      <LineBar />
+      </div>
+
+      <div className="justify-self-start">
+        <LineBar />
+      </div>
     </div>
   );
 }
